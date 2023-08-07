@@ -10,8 +10,10 @@ export async function getRestaurants(
         const txt = typeof req.query.txt === "string" ? req.query.txt : "";
         const filterBy = { txt };
 
-        logger.debug("Getting Restaurants", filterBy);
+        // logger.debug("Getting Restaurants", filterBy);
         const restaurants = await restaurantService.query(filterBy);
+        logger.debug("controller ", restaurants);
+
         res.json(restaurants);
     } catch (err) {
         logger.error("Failed to get restaurants", err);
