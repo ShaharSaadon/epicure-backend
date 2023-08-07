@@ -25,13 +25,18 @@ async function query(filterBy: FilterBy = { txt: "" }): Promise<any[]> {
 
 async function getById(restaurantId: string): Promise<any> {
     try {
-        const collection = await dbService.getCollection("car"); // Assuming dbService is properly typed
-        const car = await collection.findOne({
+        const collection = await dbService.getCollection("restaurant"); // Assuming dbService is properly typed
+        const restaurant = await collection.findOne({
             _id: new ObjectId(restaurantId),
         }); // Adding 'await' here to ensure the result is correctly awaited
-        return car;
+        return restaurant;
     } catch (err) {
-        logger.error(`while finding car ${restaurantId}`, err);
+        logger.error(`while finding restaurant ${restaurantId}`, err);
         throw err;
     }
 }
+
+export const restaurantService = {
+    query,
+    getById,
+};

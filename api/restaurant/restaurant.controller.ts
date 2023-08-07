@@ -1,12 +1,15 @@
 import { Request, Response } from "express";
-const logger = require("../../services/logger.service");
-const restaurantService = require("./restaurant.service.js");
+import { logger } from "../../services/logger.service";
+import { restaurantService } from "../restaurant/restaurant.service";
 
-async function getRestaurants(req: Request, res: Response): Promise<void> {
+export async function getRestaurants(
+    req: Request,
+    res: Response
+): Promise<void> {
     try {
-        const filterBy = {
-            txt: req.query.txt || "",
-        };
+        const txt = typeof req.query.txt === "string" ? req.query.txt : "";
+        const filterBy = { txt };
+
         logger.debug("Getting Restaurants", filterBy);
         const restaurants = await restaurantService.query(filterBy);
         res.json(restaurants);
@@ -15,8 +18,10 @@ async function getRestaurants(req: Request, res: Response): Promise<void> {
         res.status(500).send({ err: "Failed to get restaurants" });
     }
 }
-
-async function getRestaurantById(req: Request, res: Response): Promise<void> {
+export async function getRestaurantById(
+    req: Request,
+    res: Response
+): Promise<void> {
     try {
         const restaurantId = req.params.id;
         const restaurant = await restaurantService.getById(restaurantId);
@@ -26,8 +31,3 @@ async function getRestaurantById(req: Request, res: Response): Promise<void> {
         res.status(500).send({ err: "Failed to get restaurant" });
     }
 }
-
-module.exports = {
-    getRestaurants,
-    getRestaurantById,
-};

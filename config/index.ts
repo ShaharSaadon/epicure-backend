@@ -1,10 +1,6 @@
-let config;
+import * as prodConfig from "./prod";
+import * as devConfig from "./dev";
 
-if (process.env.NODE_ENV === "production") {
-    config = require("./prod");
-} else {
-    config = require("./dev");
-}
-// config.isGuestMode = true
+const config = process.env.NODE_ENV === "production" ? prodConfig : devConfig;
 
-module.exports = config;
+export default config;

@@ -1,16 +1,16 @@
 import * as express from "express";
 import {
-    getCars,
+    getRestaurants,
     getRestaurantById,
     // Uncomment any other functions you need
     // addRestaurant,
     // updateRestaurant,
     // removeRestaurant
-} from "./Restaurant.controller";
+} from "./restaurant.controller";
 
 const router = express.Router();
 
-router.get("/", getCars); // You might want to rename this to getRestaurants if that's the correct function name
+router.get("/", getRestaurants);
 router.get("/:id", getRestaurantById);
 
 // Uncomment these if you need them
