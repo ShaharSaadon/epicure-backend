@@ -361,3 +361,45 @@
 8.8.2023, 14:57:59 - DEBUG - Found 6 restaurants for category MOST_POPULAR 
 8.8.2023, 14:58:00 - DEBUG - Found 9 restaurants for category OPEN_NOW 
 8.8.2023, 14:58:00 - DEBUG - Found 9 restaurants for category ALL 
+8.8.2023, 15:01:44 - INFO - Hi | 90 | Bobo 
+8.8.2023, 15:02:41 - DEBUG - Found 9 restaurants for category ALL 
+8.8.2023, 15:05:22 - DEBUG - NEW filter criteria: | {"faundationDate":{"$gte":"2023-01-01","$lte":"2023-12-31"}} 
+8.8.2023, 15:05:22 - DEBUG - Found 5 restaurants for category NEW 
+8.8.2023, 15:05:24 - DEBUG - Found 6 restaurants for category MOST_POPULAR 
+8.8.2023, 15:05:26 - DEBUG - Found 9 restaurants for category OPEN_NOW 
+8.8.2023, 15:05:31 - DEBUG - Found 9 restaurants for category ALL 
+8.8.2023, 15:05:52 - DEBUG - NEW filter criteria: | {"faundationDate":{"$gte":"2023-01-01","$lte":"2023-12-31"}} 
+8.8.2023, 15:05:52 - DEBUG - Found 5 restaurants for category NEW 
+8.8.2023, 15:05:54 - DEBUG - Found 9 restaurants for category OPEN_NOW 
+8.8.2023, 15:05:54 - DEBUG - Found 6 restaurants for category MOST_POPULAR 
+8.8.2023, 15:05:54 - DEBUG - NEW filter criteria: | {"faundationDate":{"$gte":"2023-01-01","$lte":"2023-12-31"}} 
+8.8.2023, 15:05:55 - DEBUG - Found 5 restaurants for category NEW 
+8.8.2023, 15:05:55 - DEBUG - Found 9 restaurants for category ALL 
+8.8.2023, 15:10:05 - DEBUG - Found 9 restaurants for category MOST POPULAR 
+8.8.2023, 15:10:41 - DEBUG - Found 6 restaurants for category MOST_POPULAR 
+8.8.2023, 15:10:51 - DEBUG - Found 6 restaurants for category MOST_POPULAR 
+8.8.2023, 15:11:12 - DEBUG - Found 6 restaurants for category MOST_POPULAR 
+8.8.2023, 15:12:05 - DEBUG - Found 6 restaurants for category MOST_POPULAR 
+8.8.2023, 15:12:39 - DEBUG - Found 6 restaurants for category MOST_POPULAR 
+8.8.2023, 15:13:08 - DEBUG - Found 6 restaurants for category MOST_POPULAR 
+8.8.2023, 15:14:21 - DEBUG - Found 6 restaurants for category MOST_POPULAR 
+8.8.2023, 15:14:28 - DEBUG - Found 6 restaurants for category MOST_POPULAR 
+8.8.2023, 15:14:40 - DEBUG - Found 6 restaurants for category MOST_POPULAR 
+8.8.2023, 15:14:55 - DEBUG - Found 6 restaurants for category MOST_POPULAR 
+8.8.2023, 15:14:57 - DEBUG - Found 9 restaurants for category ALL 
+8.8.2023, 15:15:15 - DEBUG - Found 6 restaurants for category MOST_POPULAR 
+8.8.2023, 15:15:18 - DEBUG - Found 6 restaurants for category MOST_POPULAR 
+8.8.2023, 15:15:21 - ERROR - while finding dish undefined | BSONError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer 
+8.8.2023, 15:15:21 - ERROR - Failed to get dish | BSONError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer 
+8.8.2023, 15:15:23 - DEBUG - Found 6 restaurants for category MOST_POPULAR 
+8.8.2023, 15:15:31 - ERROR - while finding restaurant undefined | BSONError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer 
+8.8.2023, 15:15:31 - ERROR - Failed to get restaurant | BSONError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer 
+8.8.2023, 15:15:33 - DEBUG - Found 6 restaurants for category MOST_POPULAR 
+8.8.2023, 15:15:35 - DEBUG - Found 6 restaurants for category MOST_POPULAR 
+8.8.2023, 15:18:16 - DEBUG - Found 9 restaurants for category ALL 
+8.8.2023, 15:18:36 - DEBUG - Found 6 restaurants for category MOST_POPULAR 
+8.8.2023, 15:19:29 - ERROR - Failed to get restaurant | BSONError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer 
+8.8.2023, 15:19:29 - ERROR - while finding restaurant undefined | BSONError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer 
+8.8.2023, 15:19:35 - DEBUG - Found 6 restaurants for category MOST_POPULAR 
+8.8.2023, 15:19:41 - DEBUG - Found 6 restaurants for category MOST_POPULAR 
+8.8.2023, 15:20:16 - DEBUG - Found 6 restaurants for category MOST_POPULAR 
