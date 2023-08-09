@@ -27,14 +27,14 @@ if (process.env.NODE_ENV === "production") {
     app.use(cors(corsOptions));
 }
 
-logger.info("Hi", 90, "Bobo");
-
 import restaurantRoutes from "./api/restaurant/restaurant.routes";
 import dishRoutes from "./api/dish/dish.routes";
+import chefRoutes from "./api/chef/chef.routes";
 
 app.use("/api/restaurant", restaurantRoutes);
+app.use("/api/chef", chefRoutes);
 app.use("/api/dish", dishRoutes);
 
 server.listen(port, () => {
-    console.log(`Server is running on port: ${port}`);
+    logger.info(`Server is running on port: ${port}`);
 });
