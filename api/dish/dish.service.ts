@@ -11,16 +11,17 @@ async function query(filterBy: FilterBy = { txt: "" }): Promise<any[]> {
         console.log("service");
         const criteria = {
             name: { $regex: filterBy.txt, $options: "i" },
+            signature: true,
         };
 
         const collection: Collection<any> = await dbService.getCollection(
             "dish"
         );
-        const dishs: any[] = await collection.find().toArray();
-        console.log(dishs);
-        return dishs;
+        const dishes: any[] = await collection.find(criteria).toArray();
+        console.log(dishes);
+        return dishes;
     } catch (err) {
-        logger.error("cannot find dishs", err);
+        logger.error("cannot find dishes", err);
         throw err;
     }
 }

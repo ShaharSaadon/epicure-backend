@@ -2,9 +2,9 @@ import * as express from "express";
 import {
     getDishes,
     getDishById,
-    // addRestaurant,
-    // updateRestaurant,
-    // removeRestaurant
+    // addDish,
+    // updateDish,
+    // removeDish
 } from "./dish.controller";
 
 const router = express.Router();
