@@ -2,6 +2,27 @@ import { Collection, ObjectId, Db } from "mongodb";
 const dbService = require("../../services/db.service");
 import { logger } from "../../services/logger.service";
 
+export interface Restaurant {
+    _id: string; // Changed String to string for consistency
+    type: "restaurant";
+    name: string;
+    chef?: string;
+    stars: number;
+    openHoures: string[];
+    dishes?: Dish[];
+    faundationDate: Date;
+}
+export interface Dish {
+    _id: String;
+    type: "dish";
+    name: string;
+    special?: string;
+    ingredients: string;
+    price?: number;
+    restaurantId: string;
+    dishType?: string;
+}
+
 interface FilterBy {
     category: string;
 }
@@ -72,7 +93,53 @@ async function getById(restaurantId: string): Promise<any> {
     }
 }
 
+async function remove(restaurantId: string): Promise<void> {
+    try {
+        const collection = await dbService.getCollection("restaurant");
+        await collection.deleteOne({ _id: new ObjectId(restaurantId) });
+    } catch (err) {
+        logger.error(`cannot remove restaurant ${restaurantId}`, err);
+        throw err;
+    }
+}
+
+async function update(restaurant: Restaurant): Promise<Restaurant> {
+    try {
+        const restaurantToSave = {
+            name: restaurant.name,
+            chef: restaurant.chef,
+            stars: restaurant.stars,
+            openHoures: restaurant.openHoures,
+            dishes: restaurant.dishes,
+            faundationDate: restaurant.faundationDate,
+        };
+        const collection = await dbService.getCollection("restaurant");
+        await collection.updateOne(
+            { _id: new ObjectId(restaurant._id) },
+            { $set: restaurantToSave }
+        );
+        return restaurant;
+    } catch (err) {
+        logger.error(`cannot update restaurant ${restaurant._id}`, err);
+        throw err;
+    }
+}
+
+async function add(restaurant: Restaurant): Promise<Restaurant> {
+    try {
+        const collection = await dbService.getCollection("restaurant");
+        await collection.insertOne(restaurant);
+        return restaurant;
+    } catch (err) {
+        logger.error("cannot insert restaurant", err);
+        throw err;
+    }
+}
+
 export const restaurantService = {
     query,
     getById,
+    remove,
+    update,
+    add,
 };
