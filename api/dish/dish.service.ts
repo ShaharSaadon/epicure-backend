@@ -8,7 +8,6 @@ interface FilterBy {
 
 async function query(filterBy: FilterBy = { txt: "" }): Promise<any[]> {
     try {
-        console.log("service");
         const criteria = {
             name: { $regex: filterBy.txt, $options: "i" },
             signature: true,
@@ -18,7 +17,6 @@ async function query(filterBy: FilterBy = { txt: "" }): Promise<any[]> {
             "dish"
         );
         const dishes: any[] = await collection.find(criteria).toArray();
-        console.log(dishes);
         return dishes;
     } catch (err) {
         logger.error("cannot find dishes", err);

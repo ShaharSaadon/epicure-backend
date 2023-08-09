@@ -21,7 +21,6 @@ async function query(): Promise<any[]> {
         ];
 
         const chefs: any[] = await collection.aggregate(pipeline).toArray();
-        console.log(chefs);
         return chefs;
     } catch (err) {
         logger.error("cannot find chefs", err);

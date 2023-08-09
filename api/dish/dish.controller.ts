@@ -7,7 +7,6 @@ export async function getDishes(req: Request, res: Response): Promise<void> {
         const txt = typeof req.query.txt === "string" ? req.query.txt : "";
         const filterBy = { txt };
         const dishs = await dishService.query(filterBy);
-        logger.debug("controller ", dishs);
 
         res.json(dishs);
     } catch (err) {

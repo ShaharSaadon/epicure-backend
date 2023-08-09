@@ -813,3 +813,42 @@
 9.8.2023, 14:15:40 - DEBUG - Found 9 restaurants for category MOST_POPULAR 
 9.8.2023, 14:15:48 - DEBUG - Found 9 restaurants for category MOST_POPULAR 
 9.8.2023, 14:15:48 - DEBUG - controller  | [{"_id":"64d1f62d6647cc737efcbe42","type":"dish","name":"Pad Ki Mao","ingredients":"Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce","price":88,"dishType":"Breakfast","restaurant":"64d0dc8d6647cc737ee41100","special":"spicy","signature":true},{"_id":"64d338a2a7e85c2bc2989da2","type":"dish","name":"Garbanzo Frito","ingredients":"Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa","price":78,"dishType":"Breakfast","special":"","signature":true},{"_id":"64d338b9a7e85c2bc2989da3","type":"dish","name":"Smoked Pizza","ingredients":"Basil dough, cashew ,butter, demi-glace, bison & radish","price":98,"special":"vegan","dishType":"Breakfast","signature":true}] 
+9.8.2023, 14:19:28 - INFO - Server is running on port: 3030 
+9.8.2023, 14:19:40 - DEBUG - controller  | [{"_id":"64d1f62d6647cc737efcbe42","type":"dish","name":"Pad Ki Mao","ingredients":"Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce","price":88,"dishType":"Breakfast","restaurant":"64d0dc8d6647cc737ee41100","special":"spicy","signature":true},{"_id":"64d338a2a7e85c2bc2989da2","type":"dish","name":"Garbanzo Frito","ingredients":"Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa","price":78,"dishType":"Breakfast","special":"","signature":true},{"_id":"64d338b9a7e85c2bc2989da3","type":"dish","name":"Smoked Pizza","ingredients":"Basil dough, cashew ,butter, demi-glace, bison & radish","price":98,"special":"vegan","dishType":"Breakfast","signature":true}] 
+9.8.2023, 14:19:40 - DEBUG - Found 9 restaurants for category MOST_POPULAR 
+9.8.2023, 14:19:54 - DEBUG - Found 9 restaurants for category MOST_POPULAR 
+9.8.2023, 14:19:54 - DEBUG - controller  | [{"_id":"64d1f62d6647cc737efcbe42","type":"dish","name":"Pad Ki Mao","ingredients":"Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce","price":88,"dishType":"Breakfast","restaurant":"64d0dc8d6647cc737ee41100","special":"spicy","signature":true},{"_id":"64d338a2a7e85c2bc2989da2","type":"dish","name":"Garbanzo Frito","ingredients":"Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa","price":78,"dishType":"Breakfast","special":"","signature":true},{"_id":"64d338b9a7e85c2bc2989da3","type":"dish","name":"Smoked Pizza","ingredients":"Basil dough, cashew ,butter, demi-glace, bison & radish","price":98,"special":"vegan","dishType":"Breakfast","signature":true}] 
+9.8.2023, 14:19:59 - DEBUG - Found 12 restaurants for category ALL 
+9.8.2023, 14:20:00 - DEBUG - Found 9 restaurants for category MOST_POPULAR 
+9.8.2023, 14:20:00 - DEBUG - controller  | [{"_id":"64d1f62d6647cc737efcbe42","type":"dish","name":"Pad Ki Mao","ingredients":"Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce","price":88,"dishType":"Breakfast","restaurant":"64d0dc8d6647cc737ee41100","special":"spicy","signature":true},{"_id":"64d338a2a7e85c2bc2989da2","type":"dish","name":"Garbanzo Frito","ingredients":"Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa","price":78,"dishType":"Breakfast","special":"","signature":true},{"_id":"64d338b9a7e85c2bc2989da3","type":"dish","name":"Smoked Pizza","ingredients":"Basil dough, cashew ,butter, demi-glace, bison & radish","price":98,"special":"vegan","dishType":"Breakfast","signature":true}] 
+9.8.2023, 14:20:01 - DEBUG - Found 12 restaurants for category ALL 
+9.8.2023, 14:20:03 - DEBUG - NEW filter criteria: | {"faundationDate":{"$gte":"2023-01-01","$lte":"2023-12-31"}} 
+9.8.2023, 14:20:03 - DEBUG - Found 8 restaurants for category NEW 
+9.8.2023, 14:20:04 - DEBUG - Found 9 restaurants for category MOST_POPULAR 
+9.8.2023, 14:20:05 - DEBUG - Found 12 restaurants for category OPEN_NOW 
+9.8.2023, 14:23:43 - DEBUG - Found 12 restaurants for category ALL 
+9.8.2023, 14:23:49 - DEBUG - Found 12 restaurants for category ALL 
+9.8.2023, 14:23:56 - DEBUG - Found 12 restaurants for category ALL 
+9.8.2023, 14:24:22 - DEBUG - Found 12 restaurants for category ALL 
+9.8.2023, 14:24:31 - DEBUG - Found 12 restaurants for category ALL 
+9.8.2023, 14:24:38 - DEBUG - Found 12 restaurants for category ALL 
+9.8.2023, 14:25:35 - DEBUG - Found 12 restaurants for category ALL 
+9.8.2023, 14:25:51 - DEBUG - Found 12 restaurants for category ALL 
+9.8.2023, 14:26:05 - DEBUG - Found 12 restaurants for category ALL 
+9.8.2023, 14:26:43 - DEBUG - Found 12 restaurants for category ALL 
+9.8.2023, 14:26:54 - DEBUG - Found 12 restaurants for category ALL 
+9.8.2023, 14:33:39 - DEBUG - Found 9 restaurants for category MOST_POPULAR 
+9.8.2023, 14:33:39 - DEBUG - controller  | [{"_id":"64d1f62d6647cc737efcbe42","type":"dish","name":"Pad Ki Mao","ingredients":"Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce","price":88,"dishType":"Breakfast","restaurant":"64d0dc8d6647cc737ee41100","special":"spicy","signature":true},{"_id":"64d338a2a7e85c2bc2989da2","type":"dish","name":"Garbanzo Frito","ingredients":"Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa","price":78,"dishType":"Breakfast","special":"","signature":true},{"_id":"64d338b9a7e85c2bc2989da3","type":"dish","name":"Smoked Pizza","ingredients":"Basil dough, cashew ,butter, demi-glace, bison & radish","price":98,"special":"vegan","dishType":"Breakfast","signature":true}] 
+9.8.2023, 14:38:14 - DEBUG - Found 9 restaurants for category MOST_POPULAR 
+9.8.2023, 14:38:14 - DEBUG - controller  | [{"_id":"64d1f62d6647cc737efcbe42","type":"dish","name":"Pad Ki Mao","ingredients":"Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce","price":88,"dishType":"Breakfast","restaurant":"64d0dc8d6647cc737ee41100","special":"spicy","signature":true},{"_id":"64d338a2a7e85c2bc2989da2","type":"dish","name":"Garbanzo Frito","ingredients":"Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa","price":78,"dishType":"Breakfast","special":"","signature":true},{"_id":"64d338b9a7e85c2bc2989da3","type":"dish","name":"Smoked Pizza","ingredients":"Basil dough, cashew ,butter, demi-glace, bison & radish","price":98,"special":"vegan","dishType":"Breakfast","signature":true}] 
+9.8.2023, 14:40:20 - INFO - Server is running on port: 3030 
+9.8.2023, 14:40:24 - DEBUG - Found 9 restaurants for category MOST_POPULAR 
+9.8.2023, 14:40:50 - INFO - Server is running on port: 3030 
+9.8.2023, 14:40:53 - DEBUG - Found 9 restaurants for category MOST_POPULAR 
+9.8.2023, 14:41:41 - INFO - Server is running on port: 3030 
+9.8.2023, 14:41:44 - DEBUG - Found 9 restaurants for category MOST_POPULAR 
+9.8.2023, 14:42:16 - DEBUG - Found 9 restaurants for category MOST_POPULAR 
+9.8.2023, 14:59:13 - INFO - Server is running on port: 3030 
+9.8.2023, 15:09:26 - DEBUG - Found 9 restaurants for category MOST_POPULAR 
+9.8.2023, 15:12:36 - DEBUG - Found 9 restaurants for category MOST_POPULAR 
+9.8.2023, 15:34:09 - DEBUG - Found 9 restaurants for category MOST_POPULAR 
