@@ -30,10 +30,12 @@ if (process.env.NODE_ENV === "production") {
 import restaurantRoutes from "./api/restaurant/restaurant.routes";
 import dishRoutes from "./api/dish/dish.routes";
 import chefRoutes from "./api/chef/chef.routes";
+import authRoutes from "./api/auth/auth.routes";
 
 app.use("/api/restaurant", restaurantRoutes);
 app.use("/api/chef", chefRoutes);
 app.use("/api/dish", dishRoutes);
+app.use("/api/auth", authRoutes);
 
 server.listen(port, () => {
     logger.info(`Server is running on port: ${port}`);

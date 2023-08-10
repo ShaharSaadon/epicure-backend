@@ -867,3 +867,9 @@
 9.8.2023, 17:27:20 - DEBUG - Found 9 restaurants for category MOST_POPULAR 
 9.8.2023, 17:27:20 - DEBUG - Found 12 restaurants for category ALL 
 9.8.2023, 17:27:23 - DEBUG - Found 9 restaurants for category MOST_POPULAR 
+10.8.2023, 11:48:44 - INFO - Server is running on port: 3030 
+10.8.2023, 13:12:28 - INFO - Server is running on port: 3030 
+10.8.2023, 13:14:04 - DEBUG - auth.service - signup with username: shaharpipo, fullname: shahar saadon 
+10.8.2023, 13:14:06 - DEBUG - auth.route - new account created: {"username":"shaharpipo","password":"$2b$10$RIm7cofNGZou4uUSbq4xEemiK65t5JHA1FdTEZthxahZ7MdR2MkcG","fullname":"shahar saadon","_id":"64d4b86e054a368ff0f799bc"} 
+10.8.2023, 13:14:06 - DEBUG - auth.service - login with username: shaharpipo 
+10.8.2023, 13:14:06 - INFO - User login:  | {"_id":"64d4b86e054a368ff0f799bc","username":"shaharpipo","fullname":"shahar saadon"} 

@@ -1,5 +1,5 @@
 import { Collection, ObjectId, Db } from "mongodb";
-const dbService = require("../../services/db.service");
+import * as dbService from "../../services/db.service";
 import { logger } from "../../services/logger.service";
 
 async function query(): Promise<any[]> {
