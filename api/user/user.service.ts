@@ -1,13 +1,12 @@
 import { ObjectId, Collection, Document } from "mongodb";
 import * as dbService from "../../services/db.service";
 import { logger } from "../../services/logger.service";
+import { User } from "../auth/auth.service";
 
 type WithId<T> = T & { _id: ObjectId };
 
-import { User } from "../auth/auth.service";
 interface FilterBy {
     txt?: string;
-    minBalance?: number;
 }
 
 async function query(filterBy: FilterBy = {}): Promise<WithId<User>[]> {
@@ -16,7 +15,7 @@ async function query(filterBy: FilterBy = {}): Promise<WithId<User>[]> {
         const collection = await dbService.getCollection("user");
         const users = (await collection
             .find(criteria)
-            .sort({ nickname: -1 })
+            .sort({ fullname: -1 })
             .toArray()) as WithId<User>[];
         return users.map((user) => {
             delete user.password;
@@ -120,9 +119,6 @@ function _buildCriteria(filterBy: FilterBy): any {
                 fullname: txtCriteria,
             },
         ];
-    }
-    if (filterBy.minBalance) {
-        criteria.balance = { $gte: filterBy.minBalance };
     }
     return criteria;
 }
