@@ -852,3 +852,18 @@
 9.8.2023, 15:09:26 - DEBUG - Found 9 restaurants for category MOST_POPULAR 
 9.8.2023, 15:12:36 - DEBUG - Found 9 restaurants for category MOST_POPULAR 
 9.8.2023, 15:34:09 - DEBUG - Found 9 restaurants for category MOST_POPULAR 
+9.8.2023, 16:15:18 - INFO - Server is running on port: 3030 
+9.8.2023, 16:16:52 - ERROR - while finding dish A | BSONError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer 
+9.8.2023, 16:16:52 - ERROR - Failed to get dish | BSONError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer 
+9.8.2023, 16:16:54 - DEBUG - Found 9 restaurants for category MOST_POPULAR 
+9.8.2023, 16:17:01 - DEBUG - Found 9 restaurants for category MOST_POPULAR 
+9.8.2023, 16:19:14 - DEBUG - Found 9 restaurants for category MOST_POPULAR 
+9.8.2023, 16:26:35 - DEBUG - Found 9 restaurants for category MOST_POPULAR 
+9.8.2023, 17:13:18 - DEBUG - Found 9 restaurants for category MOST_POPULAR 
+9.8.2023, 17:18:41 - DEBUG - Found 9 restaurants for category MOST_POPULAR 
+9.8.2023, 17:25:17 - DEBUG - Found 9 restaurants for category MOST_POPULAR 
+9.8.2023, 17:27:10 - DEBUG - Found 12 restaurants for category ALL 
+9.8.2023, 17:27:13 - DEBUG - Found 12 restaurants for category ALL 
+9.8.2023, 17:27:20 - DEBUG - Found 9 restaurants for category MOST_POPULAR 
+9.8.2023, 17:27:20 - DEBUG - Found 12 restaurants for category ALL 
+9.8.2023, 17:27:23 - DEBUG - Found 9 restaurants for category MOST_POPULAR 

@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { logger } from "../../services/logger.service";
 import { restaurantService } from "../restaurant/restaurant.service";
 export interface Restaurant {
-    _id: String;
+    _id: string;
     type: "restaurant";
     name: string;
     chef?: string;
@@ -12,7 +12,7 @@ export interface Restaurant {
     faundationDate: Date;
 }
 export interface Dish {
-    _id: String;
+    _id: string;
     type: "dish";
     name: string;
     special?: string;
@@ -54,7 +54,7 @@ export async function addRestaurant(
     req: Request,
     res: Response
 ): Promise<void> {
-    const { loggedinUser } = req;
+    // const { loggedinUser } = req;
 
     try {
         const restaurant: Restaurant = req.body;
@@ -65,7 +65,6 @@ export async function addRestaurant(
         res.status(500).send({ err: "Failed to add restaurant" });
     }
 }
-
 export async function updateRestaurant(
     req: Request,
     res: Response
@@ -79,7 +78,6 @@ export async function updateRestaurant(
         res.status(500).send({ err: "Failed to update restaurant" });
     }
 }
-
 export async function removeRestaurant(
     req: Request,
     res: Response
