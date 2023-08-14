@@ -1,9 +1,12 @@
 import express, { Express } from "express";
 import http, { Server } from "http";
 import { logger } from "./services/logger.service";
+import * as dotenv from "dotenv";
 import * as path from "path";
+import * as mongoose from "mongoose";
+dotenv.config();
+
 const cors = require("cors");
-// import { Restaurant } =from "./models/restaurant";
 const app: Express = express();
 const server: Server = http.createServer(app);
 app.use(express.json());
@@ -21,6 +24,7 @@ if (process.env.NODE_ENV === "production") {
             "http://localhost:5173",
             "http://127.0.0.1:3000",
             "http://localhost:3000",
+            "http://localhost:4200",
         ],
         credentials: true,
     };
@@ -37,6 +41,15 @@ app.use("/api/chef", chefRoutes);
 app.use("/api/dish", dishRoutes);
 app.use("/api/auth", authRoutes);
 
-server.listen(port, () => {
-    logger.info(`Server is running on port: ${port}`);
-});
+const ATLAS_URL = process.env.ATLAS_URL || "3030";
+
+mongoose
+    .connect(ATLAS_URL, {})
+    .then(() => {
+        server.listen(port, () => {
+            logger.info("Server is running on port: " + port);
+        });
+    })
+    .catch((err) => {
+        console.error("Failed to connect to MongoDB:", err);
+    });

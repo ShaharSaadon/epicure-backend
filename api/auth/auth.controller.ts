@@ -1,50 +1,45 @@
 import { Request, Response } from "express";
-import { authService } from "./auth.service";
-import { logger } from "../../services/logger.service";
-import { User } from "./auth.service";
-async function login(req: Request, res: Response): Promise<void> {
-    const { username, password } = req.body;
-    try {
-        const user: User = await authService.login(username, password); // Now we're sure this is a User
-        const loginToken = authService.getLoginToken(user);
-        logger.info("User login: ", user);
-        res.cookie("loginToken", loginToken);
-        res.json(user);
-    } catch (err) {
-        // Handle the error here. If the error is a string, send it as the response.
-        logger.error("Failed to Login " + err);
-        res.status(401).send({
-            err: typeof err === "string" ? err : "Failed to Login",
+import User from "../../models/User";
+interface ErrorProperties {
+    path: string;
+    message: string;
+}
+
+interface CustomError {
+    message: string;
+    code: number;
+    errors?: Record<string, { properties: ErrorProperties }>;
+}
+
+const handleErrors = (err: CustomError): Record<string, string> => {
+    console.log(err.message, err.code);
+    let errors: Record<string, string> = { email: "", password: "" };
+
+    // duplicate email error
+    if (err.code === 11000) {
+        errors.email = "that email is already registered";
+        return errors;
+    }
+
+    // validation errors
+    if (err.message.includes("user validation failed")) {
+        Object.values(err.errors!).forEach(({ properties }) => {
+            errors[properties.path] = properties.message;
         });
     }
-}
 
-async function signup(req: Request, res: Response): Promise<void> {
+    return errors;
+};
+
+export const signup = async (req: Request, res: Response) => {
+    console.log(req.body);
+    const { email, password, username, fullname } = req.body;
+    console.log(email, password, username, fullname);
     try {
-        const { username, password, fullname } = req.body;
-        const account = await authService.signup(username, password, fullname);
-        logger.debug(
-            `auth.route - new account created: ` + JSON.stringify(account)
-        );
-        const user = await authService.login(username, password);
-        const loginToken = authService.getLoginToken(user);
-        logger.info("User login: ", user);
-        res.cookie("loginToken", loginToken);
-
-        res.json(user);
-    } catch (err) {
-        logger.error("Failed to signup " + err);
-        res.status(500).send({ err: "Failed to signup" });
+        const user = await User.create({ email, password, username, fullname });
+        res.status(201).json(user);
+    } catch (err: any) {
+        const errors = handleErrors(err);
+        res.status(400).json({ errors });
     }
-}
-
-async function logout(req: Request, res: Response): Promise<void> {
-    try {
-        res.clearCookie("loginToken");
-        res.send({ msg: "Logged out successfully" });
-    } catch (err) {
-        res.status(500).send({ err: "Failed to logout" });
-    }
-}
-
-export { login, signup, logout };
+};

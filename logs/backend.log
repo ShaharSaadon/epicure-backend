@@ -873,3 +873,20 @@
 10.8.2023, 13:14:06 - DEBUG - auth.route - new account created: {"username":"shaharpipo","password":"$2b$10$RIm7cofNGZou4uUSbq4xEemiK65t5JHA1FdTEZthxahZ7MdR2MkcG","fullname":"shahar saadon","_id":"64d4b86e054a368ff0f799bc"} 
 10.8.2023, 13:14:06 - DEBUG - auth.service - login with username: shaharpipo 
 10.8.2023, 13:14:06 - INFO - User login:  | {"_id":"64d4b86e054a368ff0f799bc","username":"shaharpipo","fullname":"shahar saadon"} 
+14.8.2023, 11:53:24 - INFO - Server is running on port: 3030 
+14.8.2023, 11:53:45 - INFO - Server is running on port: 3030 
+14.8.2023, 11:54:36 - INFO - Server is running on port: 3030 
+14.8.2023, 11:54:43 - INFO - Server is running on port: 3030 
+14.8.2023, 11:55:05 - INFO - Server is running on port: 4000 
+14.8.2023, 11:58:46 - INFO - Server is running on port: 4000 
+14.8.2023, 11:59:25 - DEBUG - auth.service - signup with username: ssdfsfdg, fullname: undefined 
+14.8.2023, 11:59:25 - ERROR - Failed to signup fullname, username and password are required! 
+14.8.2023, 12:25:19 - INFO - Server is running on port: 4000 
+14.8.2023, 12:28:56 - INFO - Server is running on port: 4000 
+14.8.2023, 12:30:21 - INFO - Server is running on port: 4000 
+14.8.2023, 12:30:49 - INFO - Server is running on port: 4000 
+14.8.2023, 12:31:20 - INFO - Server is running on port: 4000 
+14.8.2023, 13:56:21 - INFO - Server is running on port: 4000 
+14.8.2023, 13:57:06 - INFO - Server is running on port: 4000 
+14.8.2023, 14:06:21 - INFO - Server is running on port: 4000 
+14.8.2023, 14:12:04 - INFO - Server is running on port: 4000 
