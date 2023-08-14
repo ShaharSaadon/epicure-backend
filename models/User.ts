@@ -1,6 +1,7 @@
 import * as mongoose from "mongoose";
 import isEmail from "validator/lib/isEmail";
 import * as bcrypt from "bcrypt";
+import { error } from "console";
 const userSchema = new mongoose.Schema({
     email: {
         type: String,
@@ -27,12 +28,6 @@ const userSchema = new mongoose.Schema({
         minLength: [6, "Minimum password length is 6 characters"],
     },
 });
-// fire a function after doc saved to db
-
-userSchema.post("save", function (doc, next) {
-    console.log("new user was created & saved", doc);
-    next();
-});
 
 //fire a function befoer doc saved to db
 userSchema.pre("save", async function (next) {
@@ -43,6 +38,26 @@ userSchema.pre("save", async function (next) {
     }
     next();
 });
+
+// Static method to login user
+userSchema.statics.login = async function (email, password) {
+    const user = await this.findOne({ email });
+    if (user) {
+        const auth = await bcrypt.compare(password, user.password);
+        if (auth) {
+            return user;
+        }
+        throw Error("incorrect password");
+    }
+    throw Error("incorrect email");
+};
+
+// fire a function after doc saved to db
+userSchema.post("save", function (doc, next) {
+    console.log("new user was created & saved", doc);
+    next();
+});
+
 const User = mongoose.model("user", userSchema);
 
 export default User;
