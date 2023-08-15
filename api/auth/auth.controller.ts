@@ -47,6 +47,7 @@ const handleErrors = (err: any): Record<string, string> => {
 };
 
 const createToken = (id: ObjectId) => {
+    // PAYLOAD
     return jwt.sign({ id }, SECRET_KEY, {
         expiresIn: maxAge, // 3 DAYS IN SECONDS
     });
@@ -83,4 +84,9 @@ export const login = async (req: Request, res: Response) => {
         const errors = handleErrors(err);
         res.status(400).json({ errors });
     }
+};
+export const logout = async (req: Request, res: Response) => {
+    console.log("logout backend");
+    res.cookie("jwt", "", { maxAge: -1 });
+    res.status(200).send("Logged out");
 };

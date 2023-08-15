@@ -9,7 +9,11 @@ export async function getAllData(req: Request, res: Response): Promise<void> {
         const chefs = await chefService.query();
         const dishes = await dishService.query();
         const restaurants = await restaurantService.query();
-        res.json([chefs, dishes, restaurants]);
+        console.log("chefs=", chefs);
+        res.json({
+            data: [chefs, dishes, restaurants],
+            user: res.locals.user,
+        });
     } catch (err) {
         logger.error("Failed to get AllData", err);
         res.status(500).send({ err: "Failed to get AllData" });
