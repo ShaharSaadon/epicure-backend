@@ -1,6 +1,6 @@
 import * as mongoose from "mongoose";
-import isEmail from "validator/lib/isEmail";
 import * as bcrypt from "bcrypt";
+import isEmail from "validator/lib/isEmail";
 import { error } from "console";
 
 interface UserDocument extends mongoose.Document {

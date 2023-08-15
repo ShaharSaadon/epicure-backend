@@ -1,13 +1,12 @@
 import { Request, Response } from "express";
+import { ObjectId } from "mongodb";
 import * as jwt from "jsonwebtoken";
 import User from "../../models/User";
-import { ObjectId } from "mongodb";
 
 interface ErrorProperties {
     path: string;
     message: string;
 }
-
 interface ValidationError {
     properties: {
         path: string;
@@ -15,11 +14,8 @@ interface ValidationError {
     };
 }
 
-// interface CustomError {
-//     message: string;
-//     code: number;
-//     errors?: Record<string, { properties: ErrorProperties }>;
-// }
+const maxAge = 3 * 24 * 60 * 60;
+const SECRET_KEY = process.env.SECRET_KEY!;
 
 const handleErrors = (err: any): Record<string, string> => {
     console.log(err.message, err.code);
@@ -29,7 +25,7 @@ const handleErrors = (err: any): Record<string, string> => {
     if (err.message === "incorrect email") {
         errors.email = "that email is not registered";
     }
-
+    //incorrect password
     if (err.password === "incorrect password") {
         errors.password = "that password is incorrect";
     }
@@ -38,7 +34,6 @@ const handleErrors = (err: any): Record<string, string> => {
         errors.email = "that email is already registered";
         return errors;
     }
-
     // validation errors
     if (err.message.includes("user validation failed")) {
         Object.values(err.errors! as Record<string, ValidationError>).forEach(
@@ -50,9 +45,6 @@ const handleErrors = (err: any): Record<string, string> => {
 
     return errors;
 };
-
-const maxAge = 3 * 24 * 60 * 60;
-const SECRET_KEY = process.env.SECRET_KEY!;
 
 const createToken = (id: ObjectId) => {
     return jwt.sign({ id }, SECRET_KEY, {

@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
-import { logger } from "../../services/logger.service";
-import { chefService } from "../chef/chef.service";
 import { restaurantService } from "../restaurant/restaurant.service";
+import { chefService } from "../chef/chef.service";
 import { dishService } from "../dish/dish.service";
+import { logger } from "../../services/logger.service";
 
 export async function getAllData(req: Request, res: Response): Promise<void> {
     try {

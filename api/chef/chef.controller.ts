@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { logger } from "../../services/logger.service";
 import { chefService } from "./chef.service";
+import { logger } from "../../services/logger.service";
 
 export async function getChefs(req: Request, res: Response): Promise<void> {
     try {
