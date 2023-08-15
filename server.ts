@@ -39,11 +39,13 @@ import restaurantRoutes from "./api/restaurant/restaurant.routes";
 import dishRoutes from "./api/dish/dish.routes";
 import chefRoutes from "./api/chef/chef.routes";
 import authRoutes from "./api/auth/auth.routes";
+import adminRoutes from "./api/admin/admin.routes";
 
 app.use("/api/restaurant", restaurantRoutes);
 app.use("/api/chef", chefRoutes);
 app.use("/api/dish", dishRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/admin", adminRoutes);
 
 mongoose
     .connect(ATLAS_URL, {})

@@ -1,4 +1,4 @@
-import { Request, Response, response } from "express";
+import { Request, Response } from "express";
 import * as jwt from "jsonwebtoken";
 import User from "../../models/User";
 import { ObjectId } from "mongodb";
@@ -52,9 +52,10 @@ const handleErrors = (err: any): Record<string, string> => {
 };
 
 const maxAge = 3 * 24 * 60 * 60;
+const SECRET_KEY = process.env.SECRET_KEY!;
 
 const createToken = (id: ObjectId) => {
-    return jwt.sign({ id }, "shahar saadon secret", {
+    return jwt.sign({ id }, SECRET_KEY, {
         expiresIn: maxAge, // 3 DAYS IN SECONDS
     });
 };
