@@ -2,6 +2,18 @@ import * as mongoose from "mongoose";
 import isEmail from "validator/lib/isEmail";
 import * as bcrypt from "bcrypt";
 import { error } from "console";
+
+interface UserDocument extends mongoose.Document {
+    email: string;
+    username: string;
+    fullname: string;
+    password: string;
+}
+
+interface UserModel extends mongoose.Model<UserDocument> {
+    login(email: string, password: string): Promise<UserDocument>;
+}
+
 const userSchema = new mongoose.Schema({
     email: {
         type: String,
@@ -58,6 +70,6 @@ userSchema.post("save", function (doc, next) {
     next();
 });
 
-const User = mongoose.model("user", userSchema);
+const User = mongoose.model<UserDocument, UserModel>("user", userSchema);
 
 export default User;

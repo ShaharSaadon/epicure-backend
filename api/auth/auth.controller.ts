@@ -8,16 +8,31 @@ interface ErrorProperties {
     message: string;
 }
 
-interface CustomError {
-    message: string;
-    code: number;
-    errors?: Record<string, { properties: ErrorProperties }>;
+interface ValidationError {
+    properties: {
+        path: string;
+        message: string;
+    };
 }
 
-const handleErrors = (err: CustomError): Record<string, string> => {
+// interface CustomError {
+//     message: string;
+//     code: number;
+//     errors?: Record<string, { properties: ErrorProperties }>;
+// }
+
+const handleErrors = (err: any): Record<string, string> => {
     console.log(err.message, err.code);
     let errors: Record<string, string> = { email: "", password: "" };
 
+    //incorrect email
+    if (err.message === "incorrect email") {
+        errors.email = "that email is not registered";
+    }
+
+    if (err.password === "incorrect password") {
+        errors.password = "that password is incorrect";
+    }
     // duplicate email error
     if (err.code === 11000) {
         errors.email = "that email is already registered";
@@ -26,9 +41,11 @@ const handleErrors = (err: CustomError): Record<string, string> => {
 
     // validation errors
     if (err.message.includes("user validation failed")) {
-        Object.values(err.errors!).forEach(({ properties }) => {
-            errors[properties.path] = properties.message;
-        });
+        Object.values(err.errors! as Record<string, ValidationError>).forEach(
+            ({ properties }) => {
+                errors[properties.path] = properties.message;
+            }
+        );
     }
 
     return errors;
@@ -61,10 +78,16 @@ export const signup = async (req: Request, res: Response) => {
 
 export const login = async (req: Request, res: Response) => {
     try {
+        console.log(req.body);
         const { email, password } = req.body;
         const user = await User.login(email, password);
+        const token = createToken(user._id);
+        res.cookie("jwt", token, {
+            maxAge: maxAge * 1000, // 3 DAYS IN MILISECOND
+        });
         res.status(200).json({ user: user._id });
-    } catch (err) {
-        response.status(400).json({});
+    } catch (err: any) {
+        const errors = handleErrors(err);
+        res.status(400).json({ errors });
     }
 };
