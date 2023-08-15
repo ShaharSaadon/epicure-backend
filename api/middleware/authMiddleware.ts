@@ -9,7 +9,11 @@ interface DecodedToken {
     exp: number;
 }
 
-const requireAuth = (req: Request, res: Response, next: NextFunction) => {
+export const requireAuth = (
+    req: Request,
+    res: Response,
+    next: NextFunction
+) => {
     const token = req.cookies.jwt;
 
     // check json web token exists & is verified

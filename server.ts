@@ -5,9 +5,10 @@ import * as dotenv from "dotenv";
 import * as path from "path";
 import * as mongoose from "mongoose";
 import apiRoutes from "./routes";
-import cors from "cors";
 import cookieParser from "cookie-parser";
+// import cors from "cors";
 
+const cors = require("cors");
 const app: Express = express();
 
 const port: string | number = process.env.PORT || 3030;
@@ -16,7 +17,6 @@ const server: Server = http.createServer(app);
 
 app.use(express.json());
 app.use(cookieParser());
-app.use("/api/v1", apiRoutes);
 
 dotenv.config();
 
@@ -26,17 +26,21 @@ if (process.env.NODE_ENV === "production") {
 } else {
     const corsOptions = {
         origin: [
-            "http://127.0.0.1:5173",
             "http://localhost:5173",
+            "http://127.0.0.1:5173",
+            "http://localhost:4000",
             "http://127.0.0.1:3000",
             "http://localhost:3000",
             "http://localhost:4200",
-            "http://localhost:4000",
         ],
         credentials: true,
+        methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+        allowedHeaders: ["Content-Type", "Authorization"],
     };
     app.use(cors(corsOptions));
 }
+
+app.use("/api/v1/", apiRoutes);
 
 mongoose
     .connect(ATLAS_URL, {})

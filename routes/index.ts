@@ -8,10 +8,10 @@ import adminRoutes from "../api/admin/admin.routes";
 
 const router = express.Router();
 
+router.use("/auth", authRoutes);
 router.use("/restaurant", restaurantRoutes);
 router.use("/chef", chefRoutes);
 router.use("/dish", dishRoutes);
-router.use("/auth", authRoutes);
 router.use("/admin", adminRoutes);
 
 export default router;
