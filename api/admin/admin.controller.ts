@@ -12,10 +12,42 @@ export async function getAllData(req: Request, res: Response): Promise<void> {
         console.log("chefs=", chefs);
         res.json({
             data: [chefs, dishes, restaurants],
-            user: res.locals.user,
         });
     } catch (err) {
         logger.error("Failed to get AllData", err);
         res.status(500).send({ err: "Failed to get AllData" });
+    }
+}
+
+export async function getChefs(req: Request, res: Response): Promise<void> {
+    try {
+        console.log("try to get ches");
+        const chefs = await chefService.query();
+        console.log("chefs=", chefs);
+        res.json({ data: chefs });
+    } catch (err) {
+        logger.error("Failed to get chefs", err);
+        res.status(500).send({ err: "Failed to get chefs" });
+    }
+}
+export async function getRestaurants(
+    req: Request,
+    res: Response
+): Promise<void> {
+    try {
+        const restaurants = await restaurantService.query();
+        res.json({ data: restaurants });
+    } catch (err) {
+        logger.error("Failed to get restaurants", err);
+        res.status(500).send({ err: "Failed to get restaurants" });
+    }
+}
+export async function getDishes(req: Request, res: Response): Promise<void> {
+    try {
+        const dishes = await dishService.query();
+        res.json({ data: dishes });
+    } catch (err) {
+        logger.error("Failed to get dishes", err);
+        res.status(500).send({ err: "Failed to get dishes" });
     }
 }

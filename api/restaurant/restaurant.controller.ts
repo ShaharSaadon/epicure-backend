@@ -83,6 +83,7 @@ export async function removeRestaurant(
     res: Response
 ): Promise<void> {
     try {
+        console.log("hola");
         const restaurantId: string = req.params.id; // Assuming 'id' is a string. Adjust the type if needed.
         await restaurantService.remove(restaurantId);
         res.send();
