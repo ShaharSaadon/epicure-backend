@@ -15,7 +15,7 @@ async function query(): Promise<any[]> {
                     from: "restaurant", // Assuming the restaurant collection is named "restaurant"
                     localField: "restaurants", // Field in the chef collection
                     foreignField: "_id", // Field in the restaurant collection
-                    as: "associatedRestaurants", // Output array field
+                    as: "restaurants", // Output array field
                 },
             },
         ];
@@ -42,7 +42,7 @@ async function getById(chefId: string): Promise<any> {
                     from: "restaurant", // Assuming the restaurant collection is named "restaurant"
                     localField: "restaurant", // Field in the chef collection
                     foreignField: "_id", // Field in the restaurant collection
-                    as: "associatedRestaurants", // Output array field
+                    as: "restaurants", // Output array field
                 },
             },
         ];

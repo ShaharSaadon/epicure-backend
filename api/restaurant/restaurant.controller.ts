@@ -43,7 +43,9 @@ export async function getRestaurantById(
 ): Promise<void> {
     try {
         const restaurantId = req.params.id;
+        console.log("restaurantId=", restaurantId);
         const restaurant = await restaurantService.getById(restaurantId);
+        console.log("restaurant=", restaurant);
         res.json(restaurant);
     } catch (err) {
         logger.error("Failed to get restaurant", err);

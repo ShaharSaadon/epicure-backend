@@ -3,7 +3,7 @@ const dbService = require("../../services/db.service");
 import { logger } from "../../services/logger.service";
 
 export interface Restaurant {
-    _id: string; // Changed String to string for consistency
+    _id: string;
     type: "restaurant";
     name: string;
     chef?: string;
@@ -61,6 +61,14 @@ async function query(filterBy: FilterBy = { category: "" }): Promise<any[]> {
                 as: "dishes",
             },
         },
+        {
+            $lookup: {
+                from: "chef",
+                localField: "chefId",
+                foreignField: "_id",
+                as: "chef",
+            },
+        },
     ];
 
     const restaurants: any[] = await collection.aggregate(pipeline).toArray();
@@ -83,6 +91,14 @@ async function getById(restaurantId: string): Promise<any> {
                     as: "dishes",
                 },
             },
+            {
+                $lookup: {
+                    from: "chef",
+                    localField: "chefId",
+                    foreignField: "_id",
+                    as: "chef",
+                },
+            },
         ];
 
         const restaurant = await collection.aggregate(pipeline).next();
@@ -92,7 +108,6 @@ async function getById(restaurantId: string): Promise<any> {
         throw err;
     }
 }
-
 async function remove(restaurantId: string): Promise<void> {
     try {
         const collection = await dbService.getCollection("restaurant");
@@ -102,7 +117,6 @@ async function remove(restaurantId: string): Promise<void> {
         throw err;
     }
 }
-
 async function update(restaurant: Restaurant): Promise<Restaurant> {
     try {
         const restaurantToSave = {
@@ -124,7 +138,6 @@ async function update(restaurant: Restaurant): Promise<Restaurant> {
         throw err;
     }
 }
-
 async function add(restaurant: Restaurant): Promise<Restaurant> {
     try {
         const collection = await dbService.getCollection("restaurant");
@@ -135,7 +148,6 @@ async function add(restaurant: Restaurant): Promise<Restaurant> {
         throw err;
     }
 }
-
 export const restaurantService = {
     query,
     getById,

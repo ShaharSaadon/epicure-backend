@@ -8,15 +8,15 @@ interface FilterBy {
 
 async function query(filterBy: FilterBy = { txt: "" }): Promise<any[]> {
     try {
-        const criteria = {
-            name: { $regex: filterBy.txt, $options: "i" },
-            signature: true,
-        };
+        // const criteria = {
+        //     name: { $regex: filterBy.txt, $options: "i" },
+        //     signature: true,
+        // };
 
         const collection: Collection<any> = await dbService.getCollection(
             "dish"
         );
-        const dishes: any[] = await collection.find(criteria).toArray();
+        const dishes: any[] = await collection.find().toArray();
         return dishes;
     } catch (err) {
         logger.error("cannot find dishes", err);
