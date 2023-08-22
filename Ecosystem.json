@@ -10,7 +10,7 @@
     ],
     "deploy": {
         "production": {
-            "key": "/secret_epicure.pem",
+            "key": "/Users/shaharsaadon/secret_epicure.pem",
             "user": "ubuntu",
             "host": ["ec2-13-49-244-35.eu-north-1.compute.amazonaws.com"],
             "ref": "origin/jwtAuthentication",
