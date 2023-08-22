@@ -49,6 +49,6 @@ mongoose
             logger.info("Server is running on port: " + port);
         });
     })
-    .catch((err) => {
+    .catch((err: any) => {
         console.error("Failed to connect to MongoDB:", err);
     });

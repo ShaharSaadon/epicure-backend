@@ -1435,3 +1435,128 @@
 20.8.2023, 14:04:15 - DEBUG - Found 9 restaurants for category ALL 
 20.8.2023, 14:15:03 - DEBUG - Found 7 restaurants for category MOST_POPULAR 
 20.8.2023, 14:15:09 - DEBUG - Found 9 restaurants for category ALL 
+20.8.2023, 14:20:10 - INFO - Server is running on port: 4000 
+20.8.2023, 14:20:22 - ERROR - while finding dish A | BSONError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer 
+20.8.2023, 14:20:22 - ERROR - Failed to get dish | BSONError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer 
+20.8.2023, 14:20:57 - ERROR - while finding dish A | BSONError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer 
+20.8.2023, 14:20:57 - ERROR - Failed to get dish | BSONError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer 
+20.8.2023, 14:21:04 - INFO - Server is running on port: 4000 
+20.8.2023, 14:21:06 - ERROR - while finding dish A | BSONError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer 
+20.8.2023, 14:21:06 - ERROR - Failed to get dish | BSONError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer 
+20.8.2023, 14:21:07 - ERROR - while finding dish A | BSONError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer 
+20.8.2023, 14:21:07 - ERROR - Failed to get dish | BSONError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer 
+20.8.2023, 14:21:07 - ERROR - while finding dish A | BSONError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer 
+20.8.2023, 14:21:07 - ERROR - Failed to get dish | BSONError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer 
+20.8.2023, 14:21:08 - ERROR - while finding dish A | BSONError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer 
+20.8.2023, 14:21:08 - ERROR - Failed to get dish | BSONError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer 
+20.8.2023, 14:21:08 - ERROR - while finding dish A | BSONError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer 
+20.8.2023, 14:21:08 - ERROR - Failed to get dish | BSONError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters or an integer 
+20.8.2023, 14:21:10 - DEBUG - Found 7 restaurants for category MOST_POPULAR 
+20.8.2023, 14:21:13 - DEBUG - Found 7 restaurants for category MOST_POPULAR 
+20.8.2023, 14:21:21 - DEBUG - Found 7 restaurants for category MOST_POPULAR 
+20.8.2023, 14:21:25 - DEBUG - Found 7 restaurants for category MOST_POPULAR 
+20.8.2023, 14:21:29 - DEBUG - Found 7 restaurants for category MOST_POPULAR 
+20.8.2023, 14:21:32 - DEBUG - Found 7 restaurants for category MOST_POPULAR 
+20.8.2023, 14:21:36 - DEBUG - Found 7 restaurants for category MOST_POPULAR 
+20.8.2023, 14:21:44 - DEBUG - Found 7 restaurants for category MOST_POPULAR 
+20.8.2023, 14:21:52 - DEBUG - Found 7 restaurants for category MOST_POPULAR 
+20.8.2023, 14:26:01 - DEBUG - Found 9 restaurants for category ALL 
+20.8.2023, 14:26:08 - DEBUG - Found 7 restaurants for category MOST_POPULAR 
+20.8.2023, 14:26:11 - DEBUG - Found 9 restaurants for category ALL 
+20.8.2023, 14:26:13 - DEBUG - NEW filter criteria: | {"faundationDate":{"$gte":"2023-01-01","$lte":"2023-12-31"}} 
+20.8.2023, 14:26:13 - DEBUG - Found 7 restaurants for category NEW 
+20.8.2023, 14:26:14 - DEBUG - Found 7 restaurants for category MOST_POPULAR 
+20.8.2023, 14:26:17 - DEBUG - Found 9 restaurants for category OPEN_NOW 
+20.8.2023, 14:26:21 - DEBUG - NEW filter criteria: | {"faundationDate":{"$gte":"2023-01-01","$lte":"2023-12-31"}} 
+20.8.2023, 14:26:21 - DEBUG - Found 7 restaurants for category NEW 
+20.8.2023, 14:26:24 - DEBUG - Found 7 restaurants for category MOST_POPULAR 
+20.8.2023, 14:26:35 - DEBUG - Found 7 restaurants for category MOST_POPULAR 
+20.8.2023, 14:35:41 - DEBUG - Found 9 restaurants for category  
+20.8.2023, 14:35:42 - DEBUG - Found 9 restaurants for category  
+20.8.2023, 14:35:43 - DEBUG - Found 9 restaurants for category  
+20.8.2023, 14:35:44 - DEBUG - Found 9 restaurants for category  
+20.8.2023, 14:35:44 - DEBUG - Found 9 restaurants for category  
+20.8.2023, 14:35:46 - DEBUG - Found 9 restaurants for category  
+20.8.2023, 14:36:41 - DEBUG - Found 9 restaurants for category  
+20.8.2023, 14:36:42 - DEBUG - Found 9 restaurants for category  
+20.8.2023, 14:36:42 - DEBUG - Found 9 restaurants for category  
+20.8.2023, 14:36:43 - DEBUG - Found 9 restaurants for category  
+20.8.2023, 14:36:44 - DEBUG - Found 9 restaurants for category  
+20.8.2023, 14:36:44 - DEBUG - Found 9 restaurants for category  
+20.8.2023, 14:36:52 - DEBUG - Found 9 restaurants for category  
+20.8.2023, 14:37:51 - DEBUG - Found 9 restaurants for category  
+20.8.2023, 14:37:55 - DEBUG - Found 9 restaurants for category  
+20.8.2023, 14:37:57 - DEBUG - Found 9 restaurants for category  
+20.8.2023, 14:38:12 - DEBUG - Found 9 restaurants for category  
+20.8.2023, 14:38:17 - DEBUG - Found 9 restaurants for category  
+20.8.2023, 14:38:17 - DEBUG - Found 9 restaurants for category  
+20.8.2023, 14:49:42 - DEBUG - Found 9 restaurants for category  
+20.8.2023, 14:49:45 - DEBUG - Found 9 restaurants for category  
+20.8.2023, 14:49:51 - DEBUG - Found 9 restaurants for category  
+20.8.2023, 14:49:52 - DEBUG - Found 9 restaurants for category  
+20.8.2023, 14:54:00 - DEBUG - Found 9 restaurants for category  
+20.8.2023, 14:54:01 - DEBUG - Found 9 restaurants for category  
+20.8.2023, 14:54:07 - DEBUG - Found 9 restaurants for category  
+20.8.2023, 14:54:08 - DEBUG - Found 9 restaurants for category  
+20.8.2023, 14:55:20 - DEBUG - Found 9 restaurants for category  
+20.8.2023, 14:55:25 - DEBUG - Found 9 restaurants for category  
+21.8.2023, 12:28:57 - INFO - Server is running on port: 4000 
+21.8.2023, 13:33:58 - DEBUG - Found 7 restaurants for category MOST_POPULAR 
+21.8.2023, 13:34:04 - DEBUG - Found 9 restaurants for category ALL 
+21.8.2023, 13:34:07 - DEBUG - Found 7 restaurants for category MOST_POPULAR 
+21.8.2023, 13:34:17 - DEBUG - Found 7 restaurants for category MOST_POPULAR 
+21.8.2023, 13:35:41 - DEBUG - Found 9 restaurants for category ALL 
+21.8.2023, 13:47:17 - DEBUG - Found 9 restaurants for category ALL 
+21.8.2023, 14:01:06 - DEBUG - Found 7 restaurants for category MOST_POPULAR 
+21.8.2023, 14:01:06 - DEBUG - Found 9 restaurants for category ALL 
+21.8.2023, 14:02:55 - DEBUG - Found 9 restaurants for category ALL 
+21.8.2023, 14:03:56 - DEBUG - Found 9 restaurants for category  
+21.8.2023, 14:03:57 - DEBUG - Found 9 restaurants for category  
+21.8.2023, 14:04:00 - DEBUG - Found 9 restaurants for category  
+21.8.2023, 14:04:25 - DEBUG - Found 9 restaurants for category  
+21.8.2023, 14:04:29 - DEBUG - Found 9 restaurants for category  
+21.8.2023, 14:04:32 - DEBUG - Found 9 restaurants for category  
+21.8.2023, 14:18:42 - DEBUG - Found 9 restaurants for category  
+21.8.2023, 14:18:43 - DEBUG - Found 9 restaurants for category  
+21.8.2023, 14:18:55 - DEBUG - Found 9 restaurants for category  
+21.8.2023, 14:18:56 - DEBUG - Found 9 restaurants for category  
+21.8.2023, 14:52:40 - DEBUG - Found 9 restaurants for category  
+21.8.2023, 14:53:04 - DEBUG - Found 9 restaurants for category  
+21.8.2023, 14:53:11 - DEBUG - Found 9 restaurants for category  
+21.8.2023, 14:53:16 - DEBUG - Found 9 restaurants for category  
+21.8.2023, 14:53:17 - DEBUG - Found 9 restaurants for category  
+21.8.2023, 14:53:29 - DEBUG - Found 9 restaurants for category  
+21.8.2023, 14:53:30 - DEBUG - Found 9 restaurants for category  
+21.8.2023, 14:53:41 - DEBUG - Found 9 restaurants for category  
+21.8.2023, 14:53:42 - DEBUG - Found 9 restaurants for category  
+21.8.2023, 14:54:02 - DEBUG - Found 9 restaurants for category  
+21.8.2023, 15:13:46 - DEBUG - Found 9 restaurants for category  
+21.8.2023, 15:27:12 - DEBUG - Found 9 restaurants for category ALL 
+21.8.2023, 16:30:29 - DEBUG - Found 7 restaurants for category MOST_POPULAR 
+21.8.2023, 16:30:38 - DEBUG - Found 7 restaurants for category MOST_POPULAR 
+21.8.2023, 16:30:44 - DEBUG - Found 7 restaurants for category MOST_POPULAR 
+21.8.2023, 16:30:46 - DEBUG - Found 7 restaurants for category MOST_POPULAR 
+21.8.2023, 16:32:16 - DEBUG - Found 9 restaurants for category ALL 
+21.8.2023, 16:34:29 - DEBUG - Found 7 restaurants for category MOST_POPULAR 
+21.8.2023, 16:37:36 - DEBUG - Found 9 restaurants for category ALL 
+21.8.2023, 16:39:56 - DEBUG - Found 9 restaurants for category ALL 
+21.8.2023, 16:44:30 - DEBUG - Found 7 restaurants for category MOST_POPULAR 
+21.8.2023, 16:44:36 - DEBUG - Found 7 restaurants for category MOST_POPULAR 
+21.8.2023, 16:46:00 - DEBUG - Found 9 restaurants for category  
+21.8.2023, 16:46:03 - DEBUG - Found 9 restaurants for category  
+21.8.2023, 16:46:08 - DEBUG - Found 9 restaurants for category  
+21.8.2023, 16:46:09 - DEBUG - Found 9 restaurants for category  
+21.8.2023, 16:54:17 - DEBUG - Found 9 restaurants for category  
+21.8.2023, 16:54:17 - DEBUG - Found 9 restaurants for category  
+21.8.2023, 17:00:25 - DEBUG - Found 9 restaurants for category  
+21.8.2023, 17:00:27 - DEBUG - Found 9 restaurants for category  
+21.8.2023, 17:00:28 - DEBUG - Found 9 restaurants for category  
+21.8.2023, 17:00:32 - DEBUG - Found 9 restaurants for category  
+21.8.2023, 17:00:41 - DEBUG - Found 9 restaurants for category  
+21.8.2023, 17:00:55 - DEBUG - Found 9 restaurants for category ALL 
+21.8.2023, 17:01:49 - DEBUG - NEW filter criteria: | {"faundationDate":{"$gte":"2023-01-01","$lte":"2023-12-31"}} 
+21.8.2023, 17:01:49 - DEBUG - Found 7 restaurants for category NEW 
+21.8.2023, 17:01:55 - DEBUG - Found 9 restaurants for category ALL 
+21.8.2023, 17:01:58 - DEBUG - Found 9 restaurants for category ALL 
+21.8.2023, 17:02:04 - DEBUG - Found 9 restaurants for category ALL 
+21.8.2023, 17:52:49 - DEBUG - Found 9 restaurants for category  
