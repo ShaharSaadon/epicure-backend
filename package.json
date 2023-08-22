@@ -23,7 +23,6 @@
         "jsonwebtoken": "^9.0.1",
         "mongodb": "^5.7.0",
         "mongoose": "^7.4.2",
-        "types": "file:../../../../../../jsonwebtoken",
         "validator": "^13.11.0"
     },
     "devDependencies": {
