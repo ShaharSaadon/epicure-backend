@@ -9,7 +9,6 @@ export async function getAllData(req: Request, res: Response): Promise<void> {
         const chefs = await chefService.query();
         const dishes = await dishService.query();
         const restaurants = await restaurantService.query();
-        console.log("chefs=", chefs);
         res.json({
             data: [chefs, dishes, restaurants],
         });
@@ -18,12 +17,9 @@ export async function getAllData(req: Request, res: Response): Promise<void> {
         res.status(500).send({ err: "Failed to get AllData" });
     }
 }
-
 export async function getChefs(req: Request, res: Response): Promise<void> {
     try {
-        console.log("try to get ches");
         const chefs = await chefService.query();
-        console.log("chefs=", chefs);
         res.json({ data: chefs });
     } catch (err) {
         logger.error("Failed to get chefs", err);

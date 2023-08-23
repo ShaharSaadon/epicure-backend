@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { ObjectId } from "mongodb";
 import * as jwt from "jsonwebtoken";
 import User from "../../models/User";
-
+import { checkUser } from "../../middleware/authMiddleware";
 interface ErrorProperties {
     path: string;
     message: string;
@@ -13,7 +13,12 @@ interface ValidationError {
         message: string;
     };
 }
-
+interface JwtPayload {
+    id: ObjectId;
+    iat?: number;
+    exp?: number;
+    // Add any other properties you might have in the payload
+}
 const maxAge = 3 * 24 * 60 * 60;
 const SECRET_KEY = process.env.SECRET_KEY!;
 
@@ -72,7 +77,6 @@ export const signup = async (req: Request, res: Response) => {
 
 export const login = async (req: Request, res: Response) => {
     try {
-        console.log(req.body);
         const { email, password } = req.body;
         const user = await User.login(email, password);
         const token = createToken(user._id);
@@ -89,4 +93,20 @@ export const logout = async (req: Request, res: Response) => {
     console.log("logout backend");
     res.cookie("jwt", "", { maxAge: -1 });
     res.status(200).send("Logged out");
+};
+
+export const getUser = async (req: Request, res: Response) => {
+    try {
+        const token = req.cookies;
+        console.log("token=", token);
+        if (token) {
+            const decodedToken = jwt.verify(token, SECRET_KEY) as JwtPayload;
+            const user = await User.findById(decodedToken.id);
+            res.status(200).json(user);
+        } else {
+            res.status(401).send("Not authenticated");
+        }
+    } catch (err) {
+        res.status(400).send("Error fetching user");
+    }
 };
