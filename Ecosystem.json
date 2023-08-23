@@ -5,8 +5,7 @@
             "script": "./server.ts",
             "env": {
                 "NODE_ENV": "production"
-            },
-            "interpreter": "ts-node"
+            }
         }
     ],
     "deploy": {
