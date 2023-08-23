@@ -7,7 +7,6 @@ import * as mongoose from "mongoose";
 import apiRoutes from "./routes";
 import cookieParser from "cookie-parser";
 // import cors from "cors";
-dotenv.config();
 
 const cors = require("cors");
 const app: Express = express();
@@ -18,6 +17,8 @@ const server: Server = http.createServer(app);
 
 app.use(express.json());
 app.use(cookieParser());
+
+dotenv.config();
 
 if (process.env.NODE_ENV === "production") {
     // Express serve static files on production environment
