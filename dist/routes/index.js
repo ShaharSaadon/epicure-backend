@@ -1,0 +1,20 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const authMiddleware_1 = require("../middleware/authMiddleware");
+const restaurant_routes_1 = __importDefault(require("../api/restaurant/restaurant.routes"));
+const dish_routes_1 = __importDefault(require("../api/dish/dish.routes"));
+const chef_routes_1 = __importDefault(require("../api/chef/chef.routes"));
+const auth_routes_1 = __importDefault(require("../api/auth/auth.routes"));
+const admin_routes_1 = __importDefault(require("../api/admin/admin.routes"));
+const router = express_1.default.Router();
+router.get("*", authMiddleware_1.checkUser);
+router.use("/auth", auth_routes_1.default);
+router.use("/restaurant", restaurant_routes_1.default);
+router.use("/chef", chef_routes_1.default);
+router.use("/dish", dish_routes_1.default);
+router.use("/admin", authMiddleware_1.requireAuth, admin_routes_1.default);
+exports.default = router;
