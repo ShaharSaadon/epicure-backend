@@ -3,7 +3,7 @@ module.exports = {
         {
             name: "EpicureBackend",
             // script: "npm start ./server.ts",
-            script: "./node_modules/.bin/ts-node server.ts",
+            script: "./node_modules/.bin/ts-node -r ts-node/register server.ts",
             env: {
                 NODE_ENV: "staging",
                 ATLAS_URL: process.env.ATLAS_URL,
