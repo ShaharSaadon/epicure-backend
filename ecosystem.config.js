@@ -21,7 +21,7 @@ module.exports = {
 
             ref: "origin/jwtAuthentication",
 
-            repo: "git@github.com:ShaharSaadon/epicure-backendr.git",
+            repo: "git@github.com:ShaharSaadon/epicure-backend.git",
 
             path: "/home/ubuntu/Epicure/backend",
 
