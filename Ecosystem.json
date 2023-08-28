@@ -2,7 +2,7 @@
     "apps": [
         {
             "name": "EpicureBackend",
-            "script": "tsnode ./server.ts",
+            "script": "ts-node ./server.ts",
             "env": {
                 "NODE_ENV": "production"
             }
