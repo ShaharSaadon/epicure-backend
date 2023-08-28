@@ -6,7 +6,7 @@ export interface Restaurant {
     _id: string;
     type: "restaurant";
     name: string;
-    chef?: string;
+    chefId: ObjectId;
     stars: number;
     openHoures: string[];
     dishes?: Dish[];
@@ -84,6 +84,18 @@ async function getById(restaurantId: string): Promise<any> {
         const pipeline = [
             { $match: { _id: new ObjectId(restaurantId) } },
             {
+                $addFields: {
+                    // Convert dishes array from string to ObjectID
+                    dishes: {
+                        $map: {
+                            input: "$dishes",
+                            as: "dish",
+                            in: { $toObjectId: "$$dish" },
+                        },
+                    },
+                },
+            },
+            {
                 $lookup: {
                     from: "dish",
                     localField: "dishes",
@@ -121,7 +133,7 @@ async function update(restaurant: Restaurant): Promise<Restaurant> {
     try {
         const restaurantToSave = {
             name: restaurant.name,
-            chef: restaurant.chef,
+            chefId: restaurant.chefId,
             stars: restaurant.stars,
             openHoures: restaurant.openHoures,
             dishes: restaurant.dishes,

@@ -2,7 +2,7 @@
     "apps": [
         {
             "name": "EpicureBackend",
-            "script": "./server.ts",
+            "script": "tsnode ./server.ts",
             "env": {
                 "NODE_ENV": "production"
             }
@@ -17,7 +17,7 @@
             "repo": "git@github.com:ShaharSaadon/epicure-backend",
             "path": "/home/ubuntu/epicure/backend",
             "ssh_options": "StrictHostKeyChecking=no",
-            "post-deploy": "mkdir -p logs && npm i && pm2 reload ecosystem.json --env production",
+            "post-deploy": "mkdir -p logs && npm i && pm2 reload Ecosystem.json --env production",
             "pre-deploy-local": "echo 'Deploying backend code to server'",
             "env": {
                 "NODE_ENV": "production"

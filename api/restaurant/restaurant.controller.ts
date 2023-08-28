@@ -1,11 +1,12 @@
 import { Request, Response } from "express";
 import { logger } from "../../services/logger.service";
 import { restaurantService } from "../restaurant/restaurant.service";
+import { ObjectId } from "mongodb";
 export interface Restaurant {
     _id: string;
     type: "restaurant";
     name: string;
-    chef?: string;
+    chefId: ObjectId;
     stars: number;
     openHoures: string[];
     dishes?: Dish[];

@@ -1,6 +1,5 @@
 import * as jwt from "jsonwebtoken";
 import { Request, Response, NextFunction } from "express";
-import 
 import User from "../models/User";
 import * as dotenv from "dotenv";
 dotenv.config();
@@ -38,7 +37,6 @@ export const requireAuth = (
 //check current user
 export const checkUser = (req: Request, res: Response, next: NextFunction) => {
     const token = req.cookies.jwt;
-    console.log("SECRET_KEY:", SECRET_KEY);
 
     if (token) {
         jwt.verify(token, SECRET_KEY, async (err: any, decodedToken: any) => {
