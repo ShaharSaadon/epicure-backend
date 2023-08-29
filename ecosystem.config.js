@@ -24,7 +24,7 @@ module.exports = {
 
             repo: "git@github.com:ShaharSaadon/epicure-backend.git",
 
-            path: "/home/ubuntu/epicure/backend/source",
+            path: "/home/ubuntu/epicure/backend/",
 
             ssh_options: "StrictHostKeyChecking=no",
 

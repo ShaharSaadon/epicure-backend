@@ -11,7 +11,6 @@ const router = express.Router();
 
 router.get("/", getRestaurants);
 router.get("/:id", getRestaurantById);
-
 router.post("/", addRestaurant);
 router.put("/:id", updateRestaurant);
 router.delete("/:id", removeRestaurant);

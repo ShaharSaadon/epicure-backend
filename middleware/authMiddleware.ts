@@ -37,7 +37,6 @@ export const requireAuth = (
 //check current user
 export const checkUser = (req: Request, res: Response, next: NextFunction) => {
     const token = req.cookies.jwt;
-
     if (token) {
         jwt.verify(token, SECRET_KEY, async (err: any, decodedToken: any) => {
             if (err) {

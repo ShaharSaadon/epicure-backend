@@ -2,6 +2,15 @@ import { Collection, ObjectId, Db } from "mongodb";
 import * as dbService from "../../services/db.service";
 import { logger } from "../../services/logger.service";
 
+export interface IChef {
+    _id?: ObjectId;
+    name: string;
+    image: string;
+    description: string;
+    restaurants: ObjectId[];
+    restaurants_names: string[];
+}
+
 async function query(): Promise<any[]> {
     try {
         const collection: Collection<any> = await dbService.getCollection(
@@ -56,7 +65,50 @@ async function getById(chefId: string): Promise<any> {
     }
 }
 
+async function add(chef: IChef): Promise<IChef> {
+    try {
+        const collection = await dbService.getCollection("chef");
+        await collection.insertOne(chef);
+        return chef;
+    } catch (err) {
+        logger.error("cannot insert chef", err);
+        throw err;
+    }
+}
+
+async function remove(chefId: string): Promise<void> {
+    try {
+        const collection = await dbService.getCollection("chef");
+        await collection.deleteOne({ _id: new ObjectId(chefId) });
+    } catch (err) {
+        logger.error(`cannot remove chef ${chefId}`, err);
+        throw err;
+    }
+}
+async function update(chef: IChef): Promise<IChef> {
+    try {
+        const chefToSave = {
+            name: chef.name,
+            image: chef.image,
+            description: chef.description,
+            restaurants: chef.restaurants,
+        };
+        const collection = await dbService.getCollection("chef");
+        await collection.updateOne(
+            { _id: new ObjectId(chef._id) },
+            { $set: chefToSave }
+        );
+        return chef;
+    } catch (err) {
+        logger.error(`cannot update chef ${chef._id}`, err);
+        throw err;
+    }
+}
+
 export const chefService = {
     query,
     getById,
+    add,
+    update,
+    remove,
 };

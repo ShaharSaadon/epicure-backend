@@ -56,7 +56,7 @@ export async function addRestaurant(
     res: Response
 ): Promise<void> {
     // const { loggedinUser } = req;
-
+    console.log("Test");
     try {
         const restaurant: Restaurant = req.body;
         const addedRestaurant = await restaurantService.add(restaurant);
