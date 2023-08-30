@@ -44,6 +44,7 @@ exports.getRestaurantById = getRestaurantById;
 function addRestaurant(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         // const { loggedinUser } = req;
+        console.log("Test");
         try {
             const restaurant = req.body;
             const addedRestaurant = yield restaurant_service_1.restaurantService.add(restaurant);

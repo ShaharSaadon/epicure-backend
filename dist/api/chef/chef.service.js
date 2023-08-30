@@ -89,7 +89,54 @@ function getById(chefId) {
         }
     });
 }
+function add(chef) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const collection = yield dbService.getCollection("chef");
+            yield collection.insertOne(chef);
+            return chef;
+        }
+        catch (err) {
+            logger_service_1.logger.error("cannot insert chef", err);
+            throw err;
+        }
+    });
+}
+function remove(chefId) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const collection = yield dbService.getCollection("chef");
+            yield collection.deleteOne({ _id: new mongodb_1.ObjectId(chefId) });
+        }
+        catch (err) {
+            logger_service_1.logger.error(`cannot remove chef ${chefId}`, err);
+            throw err;
+        }
+    });
+}
+function update(chef) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const chefToSave = {
+                name: chef.name,
+                image: chef.image,
+                description: chef.description,
+                restaurants: chef.restaurants,
+            };
+            const collection = yield dbService.getCollection("chef");
+            yield collection.updateOne({ _id: new mongodb_1.ObjectId(chef._id) }, { $set: chefToSave });
+            return chef;
+        }
+        catch (err) {
+            logger_service_1.logger.error(`cannot update chef ${chef._id}`, err);
+            throw err;
+        }
+    });
+}
 exports.chefService = {
     query,
     getById,
+    add,
+    update,
+    remove,
 };

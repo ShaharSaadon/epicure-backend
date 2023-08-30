@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getChefById = exports.getChefs = void 0;
+exports.removeChef = exports.updateChef = exports.addChef = exports.getChefById = exports.getChefs = void 0;
 const chef_service_1 = require("./chef.service");
 const logger_service_1 = require("../../services/logger.service");
 function getChefs(req, res) {
@@ -39,3 +39,46 @@ function getChefById(req, res) {
     });
 }
 exports.getChefById = getChefById;
+function addChef(req, res) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const chef = req.body;
+            const addedChef = yield chef_service_1.chefService.add(chef);
+            res.json("addedChef");
+        }
+        catch (err) {
+            logger_service_1.logger.error("Failed to add chef", err);
+            res.status(500).send({ err: "Failed to add chef" });
+        }
+    });
+}
+exports.addChef = addChef;
+function updateChef(req, res) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const chef = req.body;
+            const updatedChef = yield chef_service_1.chefService.update(chef);
+            res.json(updatedChef);
+        }
+        catch (err) {
+            logger_service_1.logger.error("Failed to update chef", err);
+            res.status(500).send({ err: "Failed to update chef" });
+        }
+    });
+}
+exports.updateChef = updateChef;
+function removeChef(req, res) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            console.log("delete");
+            const chefId = req.params.id; // Assuming 'id' is a string. Adjust the type if needed.
+            yield chef_service_1.chefService.remove(chefId);
+            res.send();
+        }
+        catch (err) {
+            logger_service_1.logger.error("Failed to remove chef", err);
+            res.status(500).send({ err: "Failed to remove chef" });
+        }
+    });
+}
+exports.removeChef = removeChef;

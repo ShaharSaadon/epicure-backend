@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getDishById = exports.getDishes = void 0;
+exports.removeDish = exports.updateDish = exports.addDish = exports.getDishById = exports.getDishes = void 0;
 const logger_service_1 = require("../../services/logger.service");
 const dish_service_1 = require("../dish/dish.service");
 function getDishes(req, res) {
@@ -41,3 +41,47 @@ function getDishById(req, res) {
     });
 }
 exports.getDishById = getDishById;
+function addDish(req, res) {
+    return __awaiter(this, void 0, void 0, function* () {
+        console.log("Test");
+        try {
+            const dish = req.body;
+            const addedDish = yield dish_service_1.dishService.add(dish);
+            res.json(addedDish);
+        }
+        catch (err) {
+            logger_service_1.logger.error("Failed to add dish", err);
+            res.status(500).send({ err: "Failed to add dish" });
+        }
+    });
+}
+exports.addDish = addDish;
+function updateDish(req, res) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const dish = req.body;
+            const updatedDish = yield dish_service_1.dishService.update(dish);
+            res.json(updatedDish);
+        }
+        catch (err) {
+            logger_service_1.logger.error("Failed to update dish", err);
+            res.status(500).send({ err: "Failed to update dish" });
+        }
+    });
+}
+exports.updateDish = updateDish;
+function removeDish(req, res) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            console.log("removeFromBackend");
+            const dishId = req.params.id;
+            yield dish_service_1.dishService.remove(dishId);
+            res.send();
+        }
+        catch (err) {
+            logger_service_1.logger.error("Failed to remove dish", err);
+            res.status(500).send({ err: "Failed to remove dish" });
+        }
+    });
+}
+exports.removeDish = removeDish;

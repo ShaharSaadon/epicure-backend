@@ -45,7 +45,56 @@ function getById(dishId) {
         }
     });
 }
+function remove(dishId) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const collection = yield dbService.getCollection("dish");
+            yield collection.deleteOne({ _id: new mongodb_1.ObjectId(dishId) });
+        }
+        catch (err) {
+            logger_service_1.logger.error(`cannot remove dish ${dishId}`, err);
+            throw err;
+        }
+    });
+}
+function update(dish) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const dishToSave = {
+                name: dish.name,
+                special: dish.special,
+                ingredients: dish.ingredients,
+                price: dish.price,
+                restaurantId: dish.restaurantId,
+                dishType: dish.dishType,
+            };
+            const collection = yield dbService.getCollection("dish");
+            yield collection.updateOne({ _id: new mongodb_1.ObjectId(dish._id) }, { $set: dishToSave });
+            return dish;
+        }
+        catch (err) {
+            logger_service_1.logger.error(`cannot update dish ${dish._id}`, err);
+            throw err;
+        }
+    });
+}
+function add(dish) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const collection = yield dbService.getCollection("dish");
+            yield collection.insertOne(dish);
+            return dish;
+        }
+        catch (err) {
+            logger_service_1.logger.error("cannot insert dish", err);
+            throw err;
+        }
+    });
+}
 exports.dishService = {
     query,
     getById,
+    update,
+    add,
+    remove,
 };
