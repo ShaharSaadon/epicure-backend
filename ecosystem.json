@@ -4,7 +4,11 @@
             "name": "EpciureBackend",
             "script": "./dist/server.js",
             "env": {
-                "NODE_ENV": "development"
+                "NODE_ENV": "development",
+                "ATLAS_URL": "mongodb+srv://shahars:Moveo2020@shaharmoveo.jybxjww.mongodb.net/epicure?retryWrites=true&w=majority",
+                "DB_NAME": "epicure",
+                "PORT": "4000",
+                "SECRET_KEY": "ShaharSecretToken"
             }
         }
     ],
