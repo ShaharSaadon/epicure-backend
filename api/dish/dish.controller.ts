@@ -36,7 +36,6 @@ export async function getDishById(req: Request, res: Response): Promise<void> {
     }
 }
 export async function addDish(req: Request, res: Response): Promise<void> {
-    // const { loggedinUser } = req;
     console.log("Test");
     try {
         const dish: Dish = req.body;
