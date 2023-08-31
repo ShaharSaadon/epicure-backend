@@ -31,6 +31,7 @@ const corsOptions = {
         "http://127.0.0.1:3000",
         "http://localhost:3000",
         "http://localhost:4200",
+        "http://ec2-13-49-244-35.eu-north-1.compute.amazonaws.com/",
     ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
