@@ -19,25 +19,25 @@ const server: Server = http.createServer(app);
 app.use(express.json());
 app.use(cookieParser());
 
-if (process.env.NODE_ENV === "production") {
-    // Express serve static files on production environment
-    app.use(express.static(path.resolve(__dirname, "public")));
-} else {
-    const corsOptions = {
-        origin: [
-            "http://localhost:5173",
-            "http://127.0.0.1:5173",
-            "http://localhost:4000",
-            "http://127.0.0.1:3000",
-            "http://localhost:3000",
-            "http://localhost:4200",
-        ],
-        credentials: true,
-        methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-        allowedHeaders: ["Content-Type", "Authorization"],
-    };
-    app.use(cors(corsOptions));
-}
+// if (process.env.NODE_ENV === "production") {
+//     // Express serve static files on production environment
+//     app.use(express.static(path.resolve(__dirname, "public")));
+// } else {
+const corsOptions = {
+    origin: [
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "http://localhost:4000",
+        "http://127.0.0.1:3000",
+        "http://localhost:3000",
+        "http://localhost:4200",
+    ],
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+};
+app.use(cors(corsOptions));
+// }
 
 app.use("/api/v1/", apiRoutes);
 
