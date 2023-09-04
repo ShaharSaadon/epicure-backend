@@ -1,0 +1,59 @@
+{
+    "apps": [
+        {
+            "name": "EpciureBackend",
+            "script": "./dist/server.js",
+            "env": {
+                "NODE_ENV": "development",
+                "ATLAS_URL": "mongodb+srv://shahars:Moveo2020@shaharmoveo.jybxjww.mongodb.net/epicure?retryWrites=true&w=majority",
+                "DB_NAME": "epicure",
+                "PORT": "4000",
+                "SECRET_KEY": "ShaharSecretToken"
+            }
+        }
+    ],
+    "deploy": {
+        "development": {
+            "key": "/Users/shaharsaadon/.ssh/secret_epicure.pem",
+            "user": "ubuntu",
+            "host": ["ec2-13-49-244-35.eu-north-1.compute.amazonaws.com"],
+            "ref": "origin/dev",
+            "repo": "git@github.com:ShaharSaadon/epicure-backend.git",
+            "path": "/home/ubuntu/epicure/backend/",
+            "ssh_options": "StrictHostKeyChecking=no",
+            "post-deploy": "mkdir -p logs && pm2 reload ecosystem.json --env development",
+            "pre-deploy-local": "echo 'Deploying code to servers'",
+            "env": {
+                "NODE_ENV": "development"
+            }
+        },
+        "staging": {
+            "key": "~/Documents/servers_details/kornit/staging/kornit-staging.pem",
+            "user": "ubuntu",
+            "host": ["kornit-staging.moveodevelop.com"],
+            "ref": "origin/staging",
+            "repo": "git@github.com:MoveoTech/Kornit-Server.git",
+            "path": "/home/ubuntu/Kornit-Server",
+            "ssh_options": "StrictHostKeyChecking=no",
+            "post-deploy": "mkdir -p logs && ./install-build-del-source.sh && pm2 reload ecosystem.json --env development",
+            "pre-deploy-local": "echo 'Deploying code to servers'",
+            "env": {
+                "NODE_ENV": "staging"
+            }
+        },
+        "production": {
+            "key": "~/servers_details/kornit/prod/Calc_ROI_New.pem",
+            "user": "ubuntu",
+            "host": ["ec2-52-48-86-216.eu-west-1.compute.amazonaws.com"],
+            "ref": "origin/production",
+            "repo": "git@github.com:MoveoTech/Kornit-Server.git",
+            "path": "/home/ubuntu/Kornit-Server",
+            "ssh_options": "StrictHostKeyChecking=no",
+            "post-deploy": "mkdir -p logs && ./install-build-del-source.sh && pm2 reload ecosystem.json --env development",
+            "pre-deploy-local": "echo 'Deploying code to servers'",
+            "env": {
+                "NODE_ENV": "production"
+            }
+        }
+    }
+}
