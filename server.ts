@@ -28,6 +28,7 @@ const corsOptions = {
         "http://ec2-13-49-244-35.eu-north-1.compute.amazonaws.com/",
         "http://ec2-13-49-244-35.eu-north-1.compute.amazonaws.com",
         "http://ec2-13-49-244-35.eu-north-1.compute.amazonaws.com:4000",
+        "http://ec2-13-49-244-35.eu-north-1.compute.amazonaws.com:4000/api/v1/auth/login",
         "http://localhost:5173",
         "http://127.0.0.1:5173",
         "http://localhost:4000",
