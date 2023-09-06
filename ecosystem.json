@@ -16,7 +16,7 @@
         "development": {
             "key": "/Users/shaharsaadon/.ssh/secret_epicure.pem",
             "user": "ubuntu",
-            "host": ["ec2-13-49-244-35.eu-north-1.compute.amazonaws.com"],
+            "host": ["ec2-16-171-159-85.eu-north-1.compute.amazonaws.com"],
             "ref": "origin/dev",
             "repo": "git@github.com:ShaharSaadon/epicure-backend.git",
             "path": "/home/ubuntu/epicure/backend/",
@@ -44,7 +44,7 @@
         "production": {
             "key": "~/servers_details/kornit/prod/Calc_ROI_New.pem",
             "user": "ubuntu",
-            "host": ["ec2-52-48-86-216.eu-west-1.compute.amazonaws.com"],
+            "host": ["ec2-16-171-159-85.eu-north-1.compute.amazonaws.com"],
             "ref": "origin/production",
             "repo": "git@github.com:MoveoTech/Kornit-Server.git",
             "path": "/home/ubuntu/Kornit-Server",

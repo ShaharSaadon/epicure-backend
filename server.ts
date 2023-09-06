@@ -47,7 +47,7 @@ app.use(cors(corsOptions));
 app.options("*", (req, res) => {
     res.header(
         "Access-Control-Allow-Origin",
-        "http://ec2-13-49-244-35.eu-north-1.compute.amazonaws.com"
+        "http://ec2-16-171-159-85.eu-north-1.compute.amazonaws.com"
     );
     res.header(
         "Access-Control-Allow-Headers",

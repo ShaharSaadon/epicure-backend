@@ -18,7 +18,7 @@ module.exports = {
             key: "/Users/shaharsaadon/.ssh/secret_epicure.pem",
             user: "ubuntu",
 
-            host: ["ec2-13-49-244-35.eu-north-1.compute.amazonaws.com"],
+            host: ["ec2-16-171-159-85.eu-north-1.compute.amazonaws.com"],
 
             ref: "origin/jwtAuthentication",
 
