@@ -25,15 +25,15 @@ app.use(cookieParser());
 // } else {
 const corsOptions = {
     origin: [
+        "http://ec2-13-49-244-35.eu-north-1.compute.amazonaws.com/",
+        "http://ec2-13-49-244-35.eu-north-1.compute.amazonaws.com",
+        "http://ec2-13-49-244-35.eu-north-1.compute.amazonaws.com:4000",
         "http://localhost:5173",
         "http://127.0.0.1:5173",
         "http://localhost:4000",
         "http://127.0.0.1:3000",
         "http://localhost:3000",
         "http://localhost:4200",
-        "http://ec2-13-49-244-35.eu-north-1.compute.amazonaws.com/",
-        "http://ec2-13-49-244-35.eu-north-1.compute.amazonaws.com",
-        "http://ec2-13-49-244-35.eu-north-1.compute.amazonaws.com:4000",
     ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
