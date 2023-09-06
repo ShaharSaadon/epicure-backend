@@ -24,24 +24,42 @@ app.use(cookieParser());
 //     app.use(express.static(path.resolve(__dirname, "public")));
 // } else {
 const corsOptions = {
-    origin: [
-        "http://ec2-13-49-244-35.eu-north-1.compute.amazonaws.com/",
-        "http://ec2-13-49-244-35.eu-north-1.compute.amazonaws.com",
-        "http://ec2-13-49-244-35.eu-north-1.compute.amazonaws.com:4000",
-        "http://ec2-13-49-244-35.eu-north-1.compute.amazonaws.com:4000/api/v1/auth/login",
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
-        "http://localhost:4000",
-        "http://127.0.0.1:3000",
-        "http://localhost:3000",
-        "http://localhost:4200",
-    ],
+    // origin: [
+    //     "http://ec2-13-49-244-35.eu-north-1.compute.amazonaws.com/",
+    //     "http://ec2-13-49-244-35.eu-north-1.compute.amazonaws.com",
+    //     "http://ec2-13-49-244-35.eu-north-1.compute.amazonaws.com:4000",
+    //     "http://ec2-13-49-244-35.eu-north-1.compute.amazonaws.com:4000/api/v1/auth/login",
+    //     "http://localhost:5173",
+    //     "http://127.0.0.1:5173",
+    //     "http://localhost:4000",
+    //     "http://127.0.0.1:3000",
+    //     "http://localhost:3000",
+    //     "http://localhost:4200",
+    // ],
+    origin: "*",
+
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
 };
 app.use(cors(corsOptions));
 // }
+
+app.options("*", (req, res) => {
+    res.header(
+        "Access-Control-Allow-Origin",
+        "http://ec2-13-49-244-35.eu-north-1.compute.amazonaws.com"
+    );
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+    );
+    res.header(
+        "Access-Control-Allow-Methods",
+        "GET, POST, PUT, DELETE, OPTIONS"
+    );
+    res.send(200);
+});
 
 app.use("/api/v1/", apiRoutes);
 
