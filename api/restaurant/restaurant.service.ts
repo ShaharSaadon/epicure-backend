@@ -111,6 +111,12 @@ async function getById(restaurantId: string): Promise<any> {
                     as: "chef",
                 },
             },
+            {
+                $unwind: {
+                    path: "$chef",
+                    preserveNullAndEmptyArrays: true,
+                },
+            },
         ];
 
         const restaurant = await collection.aggregate(pipeline).next();
