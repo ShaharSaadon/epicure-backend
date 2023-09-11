@@ -99,6 +99,7 @@ async function getById(restaurantId: string): Promise<any> {
                             in: { $toObjectId: "$$dish" },
                         },
                     },
+                    chef: "$chef",
                 },
             },
             {
