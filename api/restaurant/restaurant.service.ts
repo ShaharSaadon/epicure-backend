@@ -69,6 +69,12 @@ async function query(filterBy: FilterBy = { category: "" }): Promise<any[]> {
                 as: "chef",
             },
         },
+        {
+            $unwind: {
+                path: "$chef",
+                preserveNullAndEmptyArrays: true,
+            },
+        },
     ];
 
     const restaurants: any[] = await collection.aggregate(pipeline).toArray();
