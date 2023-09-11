@@ -114,6 +114,7 @@ async function getById(restaurantId: string): Promise<any> {
         ];
 
         const restaurant = await collection.aggregate(pipeline).next();
+        console.log(restaurant);
         return restaurant;
     } catch (err) {
         logger.error(`while finding restaurant ${restaurantId}`, err);
