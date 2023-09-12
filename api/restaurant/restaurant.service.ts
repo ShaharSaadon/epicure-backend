@@ -1,6 +1,7 @@
 import { Collection, ObjectId, Db } from "mongodb";
 const dbService = require("../../services/db.service");
 import { logger } from "../../services/logger.service";
+import * as mongoose from "mongoose";
 
 export interface Restaurant {
     _id: string;
@@ -147,7 +148,7 @@ async function update(restaurant: Restaurant): Promise<Restaurant> {
     try {
         const restaurantToSave = {
             name: restaurant.name,
-            chefId: new ObjectId(restaurant.chefId),
+            chefId: new mongoose.Types.ObjectId(restaurant.chefId),
             stars: restaurant.stars,
             openHoures: restaurant.openHoures,
             dishes: restaurant.dishes,
