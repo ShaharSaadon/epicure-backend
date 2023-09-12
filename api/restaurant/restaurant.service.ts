@@ -147,7 +147,7 @@ async function update(restaurant: Restaurant): Promise<Restaurant> {
     try {
         const restaurantToSave = {
             name: restaurant.name,
-            chefId: restaurant.chefId,
+            chefId: new ObjectId(restaurant.chefId),
             stars: restaurant.stars,
             openHoures: restaurant.openHoures,
             dishes: restaurant.dishes,
