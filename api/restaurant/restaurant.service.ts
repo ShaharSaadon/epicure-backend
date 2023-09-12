@@ -153,6 +153,7 @@ async function update(restaurant: Restaurant): Promise<Restaurant> {
             dishes: restaurant.dishes,
             faundationDate: restaurant.faundationDate,
         };
+        console.log(restaurantToSave);
         const collection = await dbService.getCollection("restaurant");
         await collection.updateOne(
             { _id: new ObjectId(restaurant._id) },
