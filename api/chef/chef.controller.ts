@@ -54,11 +54,41 @@ export async function updateChef(req: Request, res: Response): Promise<void> {
 export async function removeChef(req: Request, res: Response): Promise<void> {
     try {
         console.log("delete");
-        const chefId: string = req.params.id; // Assuming 'id' is a string. Adjust the type if needed.
+        const chefId: string = req.params.id;
         await chefService.remove(chefId);
         res.send();
     } catch (err) {
         logger.error("Failed to remove chef", err);
         res.status(500).send({ err: "Failed to remove chef" });
+    }
+}
+
+export async function addRestaurantToChef(
+    req: Request,
+    res: Response
+): Promise<void> {
+    try {
+        const chefId: string = req.params.id;
+        const restaurantId: ObjectId = new ObjectId(req.body.restaurantId);
+        await chefService.addRestaurant(chefId, restaurantId);
+        res.json({ success: "Restaurant added successfully." });
+    } catch (err) {
+        logger.error("Failed to add restaurant to chef", err);
+        res.status(500).send({ err: "Failed to add restaurant to chef" });
+    }
+}
+
+export async function removeRestaurantFromChef(
+    req: Request,
+    res: Response
+): Promise<void> {
+    try {
+        const chefId: string = req.params.id;
+        const restaurantId: ObjectId = new ObjectId(req.body.restaurantId);
+        await chefService.removeRestaurant(chefId, restaurantId);
+        res.json({ success: "Restaurant removed successfully." });
+    } catch (err) {
+        logger.error("Failed to remove restaurant from chef", err);
+        res.status(500).send({ err: "Failed to remove restaurant from chef" });
     }
 }

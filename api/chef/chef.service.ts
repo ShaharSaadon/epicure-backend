@@ -10,7 +10,6 @@ export interface IChef {
     restaurants: ObjectId[];
     restaurants_names: string[];
 }
-
 async function query(): Promise<any[]> {
     try {
         const collection: Collection<any> = await dbService.getCollection(
@@ -36,7 +35,6 @@ async function query(): Promise<any[]> {
         throw err;
     }
 }
-
 async function getById(chefId: string): Promise<any> {
     try {
         const collection = await dbService.getCollection("chef");
@@ -64,7 +62,6 @@ async function getById(chefId: string): Promise<any> {
         throw err;
     }
 }
-
 async function add(chef: IChef): Promise<IChef> {
     try {
         const collection = await dbService.getCollection("chef");
@@ -75,7 +72,6 @@ async function add(chef: IChef): Promise<IChef> {
         throw err;
     }
 }
-
 async function remove(chefId: string): Promise<void> {
     try {
         const collection = await dbService.getCollection("chef");
@@ -104,11 +100,42 @@ async function update(chef: IChef): Promise<IChef> {
         throw err;
     }
 }
-
+async function addRestaurant(
+    chefId: string,
+    restaurantId: ObjectId
+): Promise<void> {
+    try {
+        const collection = await dbService.getCollection("chef");
+        await collection.updateOne(
+            { _id: new ObjectId(chefId) },
+            { $addToSet: { restaurants: restaurantId } } // $addToSet ensures no duplicate entries
+        );
+    } catch (err) {
+        logger.error(`cannot add restaurant to chef ${chefId}`, err);
+        throw err;
+    }
+}
+async function removeRestaurant(
+    chefId: string,
+    restaurantId: ObjectId
+): Promise<void> {
+    try {
+        const collection = await dbService.getCollection("chef");
+        await collection.updateOne(
+            { _id: new ObjectId(chefId) },
+            { $pull: { restaurants: restaurantId } } // $pull removes the restaurantId from the array
+        );
+    } catch (err) {
+        logger.error(`cannot remove restaurant from chef ${chefId}`, err);
+        throw err;
+    }
+}
 export const chefService = {
     query,
     getById,
     add,
     update,
     remove,
+    addRestaurant,
+    removeRestaurant,
 };
